@@ -1,7 +1,11 @@
 import React from 'react';
+import { Toolbar } from '../components/Toolbar';
 
 export const DashboardExample = () => {
   return (
-    <div>DashboardExample</div>
+    <React.Fragment>
+      <Toolbar />
+      <div>Dashboard Examples</div>
+    </React.Fragment>
   )
 }

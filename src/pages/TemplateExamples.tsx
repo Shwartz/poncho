@@ -1,7 +1,11 @@
 import React from 'react';
+import { Toolbar } from '../components/Toolbar';
 
 export const TemplateExamples = () => {
   return (
-    <div>TemplateExamples</div>
-  )
-}
+    <React.Fragment>
+      <Toolbar />
+      <div>TemplateExamples</div>
+    </React.Fragment>
+  );
+};
