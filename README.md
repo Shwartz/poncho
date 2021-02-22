@@ -1,6 +1,8 @@
-# New Project
+# Poncho
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
+
+### Experiment with Snowpack, TailwindCSS, PostCSS and Prod build with Webpack
 
 ## Available Scripts
 
