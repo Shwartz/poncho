@@ -1,8 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Toolbar } from '../components/Toolbar';
 import { MetricCard } from '../components/MetricCard';
+import { AdminChart } from '../components/AdminChart';
+
+const chartConfig = {
+  'type': 'bar',
+  'data': {
+    'labels': ['January', 'February', 'March', 'April'],
+    'datasets': [{
+      'label': 'Page Impressions',
+      'data': [10, 20, 30, 40],
+      'borderColor': 'rgb(157,8,73)',
+      'backgroundColor': 'rgba(117,220,238, 0.2)',
+    }, {
+      'label': 'Adsense Clicks',
+      'data': [5, 15, 10, 30],
+      'type': 'line',
+      'fill': false,
+      'borderColor': 'rgb(58,123,174)',
+    }],
+  },
+  'options': {
+    'scales': {
+      'yAxes': [{
+        'ticks': {
+          'beginAtZero': true,
+        },
+      }],
+    },
+  },
+};
+const pieConfig = {
+  'type': 'doughnut',
+  'data': {
+    'labels': ['P1', 'P2', 'P3'],
+    'datasets': [{
+      'label': 'Issues',
+      'data': [300, 50, 100],
+      'backgroundColor': ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+    }],
+  },
+};
+
 
 export const DashboardExample = () => {
+
   return (
     <div className='max-w-7xl mx-auto'>
       <Toolbar />
@@ -53,6 +95,17 @@ export const DashboardExample = () => {
             />
           </div>
         </div>
+
+        <div className='flex flex-row flex-wrap flex-grow mt-2'>
+          <AdminChart
+            data={chartConfig}
+          />
+
+          <AdminChart
+            data={pieConfig}
+          />
+        </div>
+
       </div>
     </div>
   );
