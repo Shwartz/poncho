@@ -19,14 +19,10 @@ const mainMenuItemData: IMainMenuItem[] = [
 export const Toolbar = () => {
   const [mobileMenuState, setMobileMenuState] = useState(false);
   const animationClasses = mobileMenuState ? 'opacity-1000 scale-100' : 'opacity-0 scale-95';
+  const isHiddenClass = !mobileMenuState ? 'hidden' : '';
 
   return (
     <React.Fragment>
-      <svg className='hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2'
-           fill='currentColor' viewBox='0 0 100 100' preserveAspectRatio='none' aria-hidden='true'>
-        <polygon points='50,0 100,0 50,100 0,100' />
-      </svg>
-
       <div className='relative pt-6 px-4 sm:px-6 lg:px-8'>
         <nav className='relative flex items-center justify-between sm:h-10 lg:justify-start' aria-label='Global'>
           <div className='flex items-center flex-grow flex-shrink-0 lg:flex-grow-0'>
@@ -85,10 +81,11 @@ export const Toolbar = () => {
               </button>
             </div>
           </div>
-          <div className='px-2 pt-2 pb-3 space-y-1'>
+          {/* TODO: add delay mechanism for hidden class the same as per duration-150 */}
+          <div className={`px-2 pt-2 pb-3 space-y-1 ${isHiddenClass}`}>
             <MainMenuItem
               items={mainMenuItemData}
-              cssClasses="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              cssClasses={`block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50`}
             />
           </div>
 
