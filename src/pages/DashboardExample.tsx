@@ -2,7 +2,7 @@ import React from 'react';
 import { Toolbar } from '../components/Toolbar';
 import { MetricCard } from '../components/MetricCard';
 import { AdminChart } from '../components/AdminChart';
-import { InputFieldsList } from '../components/InputFieldsList';
+import { InputList } from '../components/inputs/InputList';
 
 
 const barConfig = {
@@ -114,7 +114,7 @@ export const DashboardExample = () => {
         </div>
 
         <div className='flex flex-row flex-wrap flex-grow mt-2 flex-1'>
-          <InputFieldsList/>
+          <InputList/>
         </div>
 
       </div>
