@@ -4,8 +4,7 @@ export interface IMetricCard {
   styleWrap: string;
   styleDot: string;
   title: string;
-  value: string;
-  id: number;
+  value: string | number;
 }
 
 export const MetricCard = ({styleWrap, styleDot, title, value}: IMetricCard) => {
