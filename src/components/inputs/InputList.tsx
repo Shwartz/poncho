@@ -1,6 +1,6 @@
 import React from 'react';
-import { useRecoilValue } from 'recoil';
 import { InputItem } from './InputItem';
+import { useRecoilValue } from 'recoil';
 import { inputValuesState } from '../../atoms/atoms';
 
 
@@ -11,7 +11,6 @@ export const InputList = () => {
     <React.Fragment>
       {
         inputValues.map((item) => {
-
           return (
               <InputItem item={item} key={item.id}/>
           );

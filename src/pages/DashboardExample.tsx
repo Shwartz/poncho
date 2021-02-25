@@ -3,7 +3,8 @@ import { Toolbar } from '../components/Toolbar';
 import { MetricCard } from '../components/MetricCard';
 import { AdminChart } from '../components/AdminChart';
 import { InputList } from '../components/inputs/InputList';
-
+import { useRecoilValue } from 'recoil';
+import { inputValuesState } from '../atoms/atoms';
 
 const barConfig = {
   'type': 'bar',
@@ -45,6 +46,10 @@ const pieConfig = {
 };
 
 export const DashboardExample = () => {
+  const inputValues = useRecoilValue(inputValuesState);
+  const newBarData = inputValues.map(item => item.inputValue);
+  const updatedBarChartData = {...barConfig};
+  updatedBarChartData.data.datasets[1].data = newBarData;
 
   return (
     <div className='max-w-7xl mx-auto'>
@@ -105,7 +110,7 @@ export const DashboardExample = () => {
 
         <div className='flex flex-row flex-wrap flex-grow mt-2'>
           <AdminChart
-            data={barConfig}
+            data={updatedBarChartData}
           />
 
           <AdminChart

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Chart } from 'chart.js';
 
 export const AdminChart = ({ data }: any) => {
-
   const chartContainer = useRef(null);
   const [chartInstance, setChartInstance] = useState(null);
 
@@ -14,7 +13,6 @@ export const AdminChart = ({ data }: any) => {
       setChartInstance(newChartInstance);
     }
   }, [data]);
-
 
   return (
     <div className='w-full lg:w-1/2 p-5'>
