@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Toolbar } from '../components/Toolbar';
 import { MetricCard } from '../components/MetricCard';
 import { AdminChart } from '../components/AdminChart';
-import { Labels } from '../components/Labels';
+import { InputFieldsList } from '../components/InputFieldsList';
+
 
 const barConfig = {
   'type': 'bar',
@@ -113,7 +114,7 @@ export const DashboardExample = () => {
         </div>
 
         <div className='flex flex-row flex-wrap flex-grow mt-2 flex-1'>
-          <Labels/>
+          <InputFieldsList/>
         </div>
 
       </div>

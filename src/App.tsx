@@ -8,6 +8,7 @@ import {
 import { Home } from './pages/Home';
 import { TemplateExamples } from './pages/TemplateExamples';
 import { DashboardExample } from './pages/DashboardExample';
+import { RecoilRoot } from 'recoil';
 
 interface AppProps {
 }
@@ -23,7 +24,9 @@ function App({}: AppProps) {
             <TemplateExamples />
           </Route>
           <Route path='/dashboard-example'>
-            <DashboardExample />
+            <RecoilRoot>
+              <DashboardExample />
+            </RecoilRoot>
           </Route>
           <Route path='/'>
             <Home />
